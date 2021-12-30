@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="apple-touch-icon-precomposed" href="https://www.ubpay.com/resources/image/favicon.ico" />
+<link rel="shortcut icon" href="https://www.ubpay.com/resources/image/favicon.ico">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+<title>유비페이</title>
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="https://www.ubpay.com/resources/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="https://www.ubpay.com/resources/css/common.css" />
+<link rel="stylesheet" type="text/css" href="https://www.ubpay.com/resources/css/sub.css" />
+<link rel="stylesheet" type="text/css" href="https://www.ubpay.com/resources/css/jquery.fullPage.css" />
+<link rel="stylesheet" type="text/css" href="https://www.ubpay.com/resources/css/sidemenu.css">
+<link rel="stylesheet" type="text/css" href="https://www.ubpay.com/resources/css/slick.css">
+<link rel="stylesheet" type="text/css" href="https://www.ubpay.com/resources/css/slick-theme.css">
+<link rel="stylesheet" href="https://www.ubpay.com/resources/css/animate.min.css">
+<!--Drop menu S-->
+<link rel="stylesheet" type="text/css" href="https://www.ubpay.com/resources/css/header.css" />
+<link rel="stylesheet" type="text/css" href="https://www.ubpay.com/resources/css/footer.css" />
+<!--Drop menu E--> 
+	
+<!-- 추가 CSS 21.12.14 --> 
+<link rel="stylesheet" type="text/css" href="resources/css/add_style.css" />
+<style>
+	.content-inseide > .wrap {
+		padding: 52px 0 0px!important;
+	}
+	#sortable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
+  #sortable div {margin: 0px;}
+  #sortable div span { position: absolute; margin-left: -1.3em; }	
+	#sortable td.sortable_icon_drag {background: url(resources/images/icon_drag.png) no-repeat center; background-size: 32px; width: 32px; height: 32px;}
+	.tableHeader th {height: 50px; text-align: center;}
+	.tableHeader td {text-align: center;}
+	.tableHeader td a {cursor: pointer;}
+	.tableHeader td.store_img {background: url(resources/images/bg_store.jpg) no-repeat center; background-size: 100px; height: 100px;}
+	.tableHeader td.store_img img {width: 100px; height: 100px;}
+	
+	.sortable table, caption, tbody, tfoot, thead, tr, th, td {vertical-align: middle!important;}
+</style>
+	
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+	
+<script>
+	$( function() {
+		$( "#sortable" ).sortable({
+			stop:function(event,ui){
+				alert('위치이동완료');
+				reorder()
+			}
+		});
+	});
+	
+	function reorder() {
+		$("#sortable div").each(function(i, box) {
+			$(box).val(i + 1); 
+		});
+	}
+
+</script>
+<!-- js -->
+</head>
+
+<body>
+<!--Content full S-->
+<section> 
+	
+	<!--header S-->
+	
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+	<script>
+  AOS.init();
+</script>
+	<header> 
+		<!--Pc Header S-->
+		<div class="wrap SmallNone">
+			<div class="logo"> <a href="/index"><img src="https://www.ubpay.com/resources/image/logo.png"></a> </div>
+		</div>
+		
+		<!--Pc Header E-->
+		
+		<div class="BigNone">
+			<div class="header UPANDDOWN">
+				<div class="over_hi m_header">
+					<div class="hlogo"><a href="/index"><img src="https://www.ubpay.com/resources/image/logo.png"></a></div>
+					<div class="engEx"><a href="/en/" class="jua">ENG</a></div>
+					<div class="hamberMenu"> <a class="hamber" > <span></span> <span></span> <span></span> </a> </div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="AllHeader "> </div>
+	<!--header E-->
+	
+	<div class="content-inseide">
+		<div class="noticebg">
+			<div class="wrap">
+				<div class="bigTitle" >
+					<div id="">테스트<br>
+						유비페이</div>
+				</div>
+				<div class="SmallText"> 유비페이를 이용하면서 궁금한 점이 있으신가요?<br>
+					아래 FAQ에서 원하는 항목을 찾아보세요. </div>
+			</div>
+		</div>
+		<div class="wrap" style="padding:0;"> </div>
+		<div class="FaqWrap wrap">
+			<div class="bigTitle black" id="taban">관리자</div>
+		</div>
+		<div class="wrap" style="margin-bottom: 20px;">
+			<div class="smallTitle">Sort Table JS</div>
+		</div>
+		<div class="wrap" style="position: relative;">
+			<div class="sortable" style="margin-bottom: 10px; position:absolute; top:0; left: 0; right: 0;">
+					<table class="tableHeader" width="100%" border="1" cellspacing="0" cellpadding="0" style="border: 1px solid #e1e1e1; border-collapse: collapse; background: #f7f7f7;">
+						<thead>
+							<tr>
+								<th width="4%"><input type="checkbox"></th>
+								<th width="10%">No</th>
+								<th width="6%">메인노출</th>
+								<th width="10%">로고</th>
+								<th width="22%">가맹점명</th>
+								<th width="14%">서비스구분</th>
+								<th width="8%">업종</th>
+								<th width="10%">조회수</th>
+								<th width="8%">날짜</th>
+								<th width="8%">순서</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			<div style="position: relative; border-bottom: #e1e1e1 1px solid;">
+				<div id="sortable">
+					<div class="ui-state-default">
+						<table class="tableHeader" width="100%" border="1" cellspacing="0" cellpadding="0" style="border: 1px solid #e1e1e1; border-collapse: collapse; background: #fff;">
+						<tbody style="height: 40px;">
+							<tr>
+								<td width="4%"><input type="checkbox"></td>
+								<td width="10%">12,345,678</td>
+								<td width="6%">노출</td>
+								<td width="10%" class="store_img"><img src="resources/images/img_store_sample.jpg" alt="상점이미지" /></td>
+								<td width="22%"><a onclick="alert('링크');">화천군 (군장병 우대업소) 글자 길이 테스트입니다. 길이 테스트입니다.</a></td>
+								<td width="14%">온라인</td>
+								<td width="8%">요식</td>
+								<td width="10%">1234</td>
+								<td width="8%">2021.12.06</td>
+								<td width="8%" class="sortable_icon_drag"></td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+					<div class="ui-state-default">
+						<table class="tableHeader" width="100%" border="1" cellspacing="0" cellpadding="0" style="border: 1px solid #e1e1e1; border-collapse: collapse; background: #fff;">
+						<tbody style="height: 40px;">
+							<tr>
+								<td width="4%"><input type="checkbox"></td>
+								<td width="10%">12,345</td>
+								<td width="6%">노출</td>
+								<td width="10%" class="store_img"><img src="resources/images/img_store_sample.jpg" alt="상점이미지" /></td>
+								<td width="22%">화천군 (군장병 우대업소)</td>
+								<td width="14%">온라인</td>
+								<td width="8%">요식</td>
+								<td width="10%">1234</td>
+								<td width="8%">2021.12.06</td>
+								<td width="8%" class="sortable_icon_drag"></td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+					<div class="ui-state-default">
+						<table class="tableHeader" width="100%" border="1" cellspacing="0" cellpadding="0" style="border: 1px solid #e1e1e1; border-collapse: collapse; background: #fff;">
+						<tbody style="height: 40px;">
+							<tr>
+								<td width="4%"><input type="checkbox"></td>
+								<td width="10%">12,345</td>
+								<td width="6%">노출</td>
+								<td width="10%" class="store_img"></td>
+								<td width="22%">화천군 (군장병 우대업소)</td>
+								<td width="14%">온라인</td>
+								<td width="8%">요식</td>
+								<td width="10%">1234</td>
+								<td width="8%">2021.12.06</td>
+								<td width="8%" class="sortable_icon_drag"></td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+					<div class="ui-state-default">
+						<table class="tableHeader" width="100%" border="1" cellspacing="0" cellpadding="0" style="border: 1px solid #e1e1e1; border-collapse: collapse; background: #fff;">
+						<tbody style="height: 40px;">
+							<tr>
+								<td width="4%"><input type="checkbox"></td>
+								<td width="10%">12,345</td>
+								<td width="6%">노출</td>
+								<td width="10%" class="store_img"><img src="resources/images/img_store_sample.jpg" alt="상점이미지" /></td>
+								<td width="22%">화천군 (군장병 우대업소)</td>
+								<td width="14%">온라인</td>
+								<td width="8%">요식</td>
+								<td width="10%">1234</td>
+								<td width="8%">2021.12.06</td>
+								<td width="8%" class="sortable_icon_drag"></td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+					<div class="ui-state-default">
+						<table class="tableHeader" width="100%" border="1" cellspacing="0" cellpadding="0" style="border: 1px solid #e1e1e1; border-collapse: collapse; background: #fff;">
+						<tbody style="height: 40px;">
+							<tr>
+								<td width="4%"><input type="checkbox"></td>
+								<td width="10%">12,345</td>
+								<td width="6%">노출</td>
+								<td width="10%" class="store_img"><img src="resources/images/img_store_sample.jpg" alt="상점이미지" /></td>
+								<td width="22%">화천군 (군장병 우대업소)</td>
+								<td width="14%">온라인</td>
+								<td width="8%">요식</td>
+								<td width="10%">1234</td>
+								<td width="8%">2021.12.06</td>
+								<td width="8%" class="sortable_icon_drag"></td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+					<div class="ui-state-default">
+						<table class="tableHeader" width="100%" border="1" cellspacing="0" cellpadding="0" style="border: 1px solid #e1e1e1; border-collapse: collapse; background: #fff;">
+						<tbody style="height: 40px;">
+							<tr>
+								<td width="4%"><input type="checkbox"></td>
+								<td width="10%">12,345</td>
+								<td width="6%">노출</td>
+								<td width="10%" class="store_img"><img src="resources/images/img_store_sample.jpg" alt="상점이미지" /></td>
+								<td width="22%">화천군 (군장병 우대업소)</td>
+								<td width="14%">온라인</td>
+								<td width="8%">요식</td>
+								<td width="10%">1234</td>
+								<td width="8%">2021.12.06</td>
+								<td width="8%" class="sortable_icon_drag"></td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+				</div>
+		</div>
+		</div>	
+	</div>
+</section>
+<!--Content full S--> 
+</body>
+</html>
